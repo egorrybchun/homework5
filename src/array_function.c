@@ -2,12 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void join_int_arrays(int* src1, size_t size_src1, int* src2, size_t size_src2) {
+void join_int_arrays(int *src1, size_t size_src1, int *src2, size_t size_src2, int *dest) {
     int* dest = (int*)malloc((size_src1 + size_src2) * sizeof(int));
 
-    if (dest == NULL) {
-        return NULL;
-    }
 
     for (size_t i = 0; i < size_src1; i++) {
         dest[i] = src1[i];
@@ -20,12 +17,9 @@ void join_int_arrays(int* src1, size_t size_src1, int* src2, size_t size_src2) {
     free(dest);
 }
 
-void join_and_sort_int_arrays(int* src1, size_t size_src1, int* src2, size_t size_src2) {
+void join_and_sort_int_arrays(int* src1, size_t size_src1, int* src2, size_t size_src2, int* dest) {
     int* dest = (int*)malloc((size_src1 + size_src2) * sizeof(int));
 
-    if (dest == NULL) {
-        return NULL;
-    }
 
     size_t i1 = 0, i2 = 0, i3 = 0;
 
@@ -49,9 +43,7 @@ void join_and_sort_int_arrays(int* src1, size_t size_src1, int* src2, size_t siz
 }
 
 void get_min_and_max_from_int_array(int* src, size_t size, int* min, int* max) {
-    if (size == 0) {
-        return;
-    }
+
 
     *min = src[0];
     *max = src[0];
