@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void* join_int_arrays(int* src1, size_t size_src1, int* src2, size_t size_src2) {
+void join_int_arrays(int* src1, size_t size_src1, int* src2, size_t size_src2) {
     int* dest = (int*)malloc((size_src1 + size_src2) * sizeof(int));
 
     if (dest == NULL) {
@@ -20,7 +20,7 @@ void* join_int_arrays(int* src1, size_t size_src1, int* src2, size_t size_src2) 
     free(dest);
 }
 
-void* join_and_sort_int_arrays(int* src1, size_t size_src1, int* src2, size_t size_src2) {
+void join_and_sort_int_arrays(int* src1, size_t size_src1, int* src2, size_t size_src2) {
     int* dest = (int*)malloc((size_src1 + size_src2) * sizeof(int));
 
     if (dest == NULL) {
